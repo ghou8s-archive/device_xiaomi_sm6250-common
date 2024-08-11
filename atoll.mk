@@ -46,7 +46,8 @@ PRODUCT_PACKAGES += \
     libspkrprot \
     libssrec \
     libvolumelistener \
-    sound_trigger.primary.atoll:32
+    sound_trigger.primary.atoll:32 \
+    tinymix
 
 PRODUCT_PACKAGES += \
     audio_effects.xml \
