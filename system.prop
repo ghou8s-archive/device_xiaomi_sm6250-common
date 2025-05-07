@@ -1,6 +1,9 @@
 # Audio
 audio.offload.min.duration.secs=30
 
+# Audio service timeout
+audio.service.client_wait_ms=10000
+
 # CNE
 persist.vendor.cne.feature=1
 
