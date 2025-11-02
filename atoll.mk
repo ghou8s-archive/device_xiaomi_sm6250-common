@@ -111,6 +111,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2
 
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti
+
+PRODUCT_PACKAGES += \
+    libbatching \
+    libgeofencing \
+    libgnss
+
+PRODUCT_PACKAGES += \
+    flp.conf \
+    gnss_antenna_info.conf \
+    gps.conf \
+    izat.conf
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
