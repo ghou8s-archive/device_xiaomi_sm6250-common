@@ -78,7 +78,8 @@ LOC_HIDL_VERSION := 4.0
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 	hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-	$(COMMON_PATH)/configs/vintf/device_framework_matrix.xml
+	$(COMMON_PATH)/configs/vintf/device_framework_matrix.xml \
+	vendor/arrow/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
@@ -102,13 +103,12 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := cust_defconfig
+TARGET_KERNEL_CONFIG := vendor/xiaomi/miatoll_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
 
 KERNEL_LD := LD=ld.lld
 KERNEL_CLANG_TRIPLE := CLANG_TRIPLE=aarch64-linux-gnu-
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1
-TARGET_KERNEL_CLANG_VERSION := r498229b
 
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
@@ -151,7 +151,7 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
-ifeq ($(CHERISH_VANILLA),false)
+ifeq ($(ARROW_GAPPS),true)
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 209715200
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
